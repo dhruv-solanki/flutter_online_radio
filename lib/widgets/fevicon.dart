@@ -2,20 +2,29 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class Fevicon extends StatelessWidget {
-  Fevicon({required this.stations, required this.index});
+  Fevicon({required this.imageUrl, required this.height, required this.width});
 
-  final stations;
-  final int index;
+  final String imageUrl;
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 48,
-      width: 48,
-      child: CachedNetworkImage(
-        imageUrl: stations[index].imageUrl,
-        placeholder: (context, url) => CircularProgressIndicator(),
-        errorWidget: (context, url, err) => Icon(Icons.error),
+      height: height,
+      width: width,
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.grey,
+          ),
+          color: Colors.grey,
+        ),
+        child: CachedNetworkImage(
+          imageUrl: imageUrl,
+          placeholder: (context, url) => CircularProgressIndicator(),
+          errorWidget: (context, url, err) => Icon(Icons.error),
+        ),
       ),
     );
   }

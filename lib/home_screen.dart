@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_online_radio/models/station.dart';
 
 import 'package:flutter_online_radio/widgets/list_card.dart';
+import 'package:flutter_online_radio/widgets/media_player_sheet.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -27,6 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           },
         ),
+      ),
+      bottomSheet: MediaPlayerSheet(
+        station: stations[0],
       ),
     );
   }

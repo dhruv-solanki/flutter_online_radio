@@ -10,12 +10,17 @@ class ListCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: Colors.black54,
+      ),
+      margin: EdgeInsets.all(2),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Row(
         children: [
           Fevicon(
-            stations: stations,
-            index: index,
+            imageUrl: stations[index].imageUrl,
+            height: 48,
+            width: 48,
           ),
           SizedBox(
             width: 20,
