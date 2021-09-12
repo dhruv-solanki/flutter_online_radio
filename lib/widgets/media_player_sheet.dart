@@ -1,35 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_online_radio/controller/radio_player.dart';
+import 'package:flutter_online_radio/models/station.dart';
 import 'package:flutter_online_radio/widgets/fevicon.dart';
 
-class MediaPlayerSheet extends StatefulWidget {
-  MediaPlayerSheet({required this.station});
+class MediaPlayerSheet extends StatelessWidget {
+  MediaPlayerSheet(
+      {required this.station, required this.onPressed, required this.icon});
 
-  final station;
-
-  @override
-  _MediaPlayerSheetState createState() => _MediaPlayerSheetState();
-}
-
-class _MediaPlayerSheetState extends State<MediaPlayerSheet> {
-  bool isPlaying = false;
-  late RadioPlayer radioPlayer;
-
-  @override
-  initState() {
-    super.initState();
-    setRadio();
-  }
-
-  setRadio() async {
-    radioPlayer = RadioPlayer();
-    try {
-      await radioPlayer.setUrl(widget.station.stationUrl);
-      print(widget.station.stationUrl);
-    } on Exception catch (e) {
-      print(e);
-    }
-  }
+  final Station station;
+  final VoidCallback onPressed;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -39,52 +18,37 @@ class _MediaPlayerSheetState extends State<MediaPlayerSheet> {
         color: Colors.black26,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Fevicon(
-            imageUrl: widget.station.imageUrl,
+            imageUrl: station.imageUrl,
             height: 50,
             width: 50,
           ),
           SizedBox(
-            width: 10,
+            width: 20,
           ),
           Flexible(
             child: Text(
-              widget.station.name,
+              station.name,
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
               ),
             ),
           ),
           SizedBox(
             width: 10,
           ),
-          (isPlaying)
-              ? IconButton(
-                  icon: Icon(
-                    Icons.pause,
-                    size: 32,
-                  ),
-                  onPressed: () async {
-                    await radioPlayer.pause();
-                    setState(() {
-                      this.isPlaying = false;
-                    });
-                  },
-                )
-              : IconButton(
-                  icon: Icon(
-                    Icons.play_arrow,
-                    size: 32,
-                  ),
-                  onPressed: () async {
-                    setState(() {
-                      this.isPlaying = true;
-                    });
-                    await radioPlayer.play(url: widget.station.stationUrl);
-                  },
-                ),
+          IconButton(
+            icon: Icon(
+              icon,
+              size: 36,
+            ),
+            onPressed: onPressed,
+          ),
+          SizedBox(
+            width: 20,
+          )
         ],
       ),
     );
