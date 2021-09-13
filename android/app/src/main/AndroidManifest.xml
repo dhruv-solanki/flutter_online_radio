@@ -4,6 +4,7 @@
    <application
         android:label="flutter_online_radio"
         android:icon="@mipmap/ic_launcher"
+        android:label="Online Radio"
         android:usesCleartextTraffic="true"
         >
         <activity
