@@ -2,9 +2,8 @@
     package="com.example.flutter_online_radio">
   <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="flutter_online_radio"
         android:icon="@mipmap/ic_launcher"
-        android:label="Online Radio"
+        android:label="Online Radio by Dhruv Solanki"
         android:usesCleartextTraffic="true"
         >
         <activity
