@@ -2,8 +2,8 @@
 A simple application that plays Online Radio.
 
 ### Android APK
-* You can find the Online Radio(V1.0).apk in "/APK Versions/V1.0" folder
-* Download it, Install and then enjoy.
+* You can find the V1.0 APK in APK Versions folder.
+* Download, Install and then enjoy.
 
 ### Pub Packages
 * just_audio
@@ -17,8 +17,7 @@ A simple application that plays Online Radio.
 * flutter_bloc
 
 ### Version Changes
-1. Version 1.0
-Features
+## Version 1.0 - Features
 * Intro Screen with Developer name
 * Home page - Shows list of Radio Stations
 * On tap of any Radio station it plays that station
