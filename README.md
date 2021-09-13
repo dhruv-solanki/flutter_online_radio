@@ -1,11 +1,11 @@
 # Flutter Online Radio Application
 A simple application that plays Online Radio.
 
-### Android APK
+## Android APK
 * You can find the V1.0 APK in APK Versions folder.
 * Download, Install and then enjoy.
 
-### Pub Packages
+## Pub Packages
 * just_audio
 * audio_session
 * equatable
@@ -16,8 +16,8 @@ A simple application that plays Online Radio.
 * bloc
 * flutter_bloc
 
-### Version Changes
-## Version 1.0 - Features
+## Version Changes
+### Version 1.0 - Features
 * Intro Screen with Developer name
 * Home page - Shows list of Radio Stations
 * On tap of any Radio station it plays that station
