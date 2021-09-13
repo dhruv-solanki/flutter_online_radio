@@ -10,6 +10,7 @@ import 'package:flutter_online_radio/widgets/error_screen.dart';
 
 import 'package:flutter_online_radio/widgets/list_card.dart';
 import 'package:flutter_online_radio/widgets/media_player_sheet.dart';
+import 'package:flutter_online_radio/widgets/radio_status.dart';
 import 'package:flutter_online_radio/widgets/waiting_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,11 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // final stations = STATIONS;
   RadioBrowser _radioBrowser = RadioBrowser(dio: Dio());
   late List<Station> stations;
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  bool isPlayerInit = false;
 
   initialize() async {
     final String _countryCode = 'in';
@@ -48,6 +45,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Online Radio'),
+          actions: [
+            BlocBuilder<RadioPlayerBloc, PlayerState>(
+              builder: (context, state) {
+                if (state is PausedState || state is StoppedState) {
+                  return PausedStatus();
+                } else {
+                  return PlayingStatus();
+                }
+              },
+            )
+          ],
         ),
         body: Container(
           child: FutureBuilder(
@@ -65,18 +73,29 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   );
                 } else {
-                  return ListView.builder(
-                    itemCount: stations.length,
-                    itemBuilder: (context, index) {
-                      return ListCard(
-                        stations: stations,
-                        index: index,
-                        onTap: () {
-                          BlocProvider.of<RadioPlayerBloc>(context)
-                              .add(PlayEvent(station: stations[index]));
-                        },
-                      );
-                    },
+                  return Container(
+                    height: (isPlayerInit)
+                        ? MediaQuery.of(context).size.height * 0.77
+                        : MediaQuery.of(context).size.height,
+                    child: ListView.builder(
+                      itemCount: stations.length,
+                      // padding: EdgeInsets.only(
+                      //   bottom: 70,
+                      // ),
+                      itemBuilder: (context, index) {
+                        return ListCard(
+                          stations: stations,
+                          index: index,
+                          onTap: () {
+                            setState(() {
+                              isPlayerInit = true;
+                            });
+                            BlocProvider.of<RadioPlayerBloc>(context)
+                                .add(PlayEvent(station: stations[index]));
+                          },
+                        );
+                      },
+                    ),
                   );
                 }
               }

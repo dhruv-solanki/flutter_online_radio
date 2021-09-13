@@ -14,9 +14,9 @@ class ListCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.black54,
+          color: Colors.grey[800],
         ),
-        margin: EdgeInsets.all(2),
+        margin: EdgeInsets.all(3),
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: Row(
           children: [
@@ -32,7 +32,7 @@ class ListCard extends StatelessWidget {
               child: Text(
                 stations[index].name,
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 15,
                 ),
               ),
             ),

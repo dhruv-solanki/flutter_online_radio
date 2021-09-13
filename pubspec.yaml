@@ -20,6 +20,7 @@ dependencies:
   equatable: ^2.0.3
   bloc: ^7.1.0
   flutter_bloc: ^7.2.0
+  loading_indicator: ^3.0.1
 
 dev_dependencies:
   flutter_test:

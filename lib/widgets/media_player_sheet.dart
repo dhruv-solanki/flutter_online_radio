@@ -13,13 +13,16 @@ class MediaPlayerSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
+      height: 70,
       decoration: BoxDecoration(
         color: Colors.black26,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          SizedBox(
+            width: 10,
+          ),
           Fevicon(
             imageUrl: station.imageUrl,
             height: 50,

@@ -37,7 +37,7 @@ class RadioBrowser {
     final List<Station> stations = (rawStationsJson.data as List)
         .map((responseJson) => Station(
               stationUrl: responseJson['url_resolved'],
-              imageUrl: responseJson['fevicon'] ??= nullImageUrl,
+              imageUrl: responseJson['fevicon'] ?? nullImageUrl,
               name: responseJson['name'],
             ))
         .toList();

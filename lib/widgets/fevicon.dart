@@ -15,9 +15,9 @@ class Fevicon extends StatelessWidget {
       width: width,
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.grey,
-          ),
+          // border: Border.all(
+          //   color: Colors.grey,
+          // ),
           color: Colors.grey,
         ),
         child: CachedNetworkImage(
