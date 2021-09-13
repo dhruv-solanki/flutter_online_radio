@@ -1,16 +1,29 @@
-# flutter_online_radio
+# Flutter Online Radio Application
+A simple application that plays Online Radio.
 
-A new Flutter project.
+### Pub Packages
+* just_audio
+* audio_session
+* equatable
+* loading_indicator
+* cached_network_image
+* dio
+* dio_http_cache
+* bloc
+* flutter_bloc
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Version Changes
+##### Version 1.0
+Features
+* Intro Screen with Developer name
+* Home page - Shows list of Radio Stations
+* On tap of any Radio station it plays that station
+* After clicking at Bottom you will see Radio Player 
+* Radio Player supports Play and Pause functionality
+* Appbar contains name of app and Status of Radio
+* Radio Status: Playing and Paused
+* Even after phone locks it plays Radio Station
+* Version 1.0 only supports now Indian Radio Stations
+* The limit of Radio Stations that it displays is : 15
+* Internet is must need otherwise app will not work
+* There can be minor issues please report
