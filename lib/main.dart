@@ -1,11 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_online_radio/bloc/radio_player_bloc.dart';
-import 'package:flutter_online_radio/controller/radio_player.dart';
-import 'package:flutter_online_radio/home_screen.dart';
-import 'package:flutter_online_radio/widgets/splash_screen.dart';
+import 'package:flutter_online_radio/screens/splash_screen.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   HttpClient createHttpClient(SecurityContext? context) {
@@ -23,8 +19,6 @@ void main() {
 class RadioApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final RadioPlayer radioPlayer = RadioPlayer();
-
     return MaterialApp(
       title: 'Online Radio',
       theme: ThemeData.dark(),

@@ -6,12 +6,12 @@ import 'package:flutter_online_radio/bloc/player_state.dart';
 import 'package:flutter_online_radio/bloc/radio_player_bloc.dart';
 import 'package:flutter_online_radio/controller/radio_browser.dart';
 import 'package:flutter_online_radio/models/station.dart';
-import 'package:flutter_online_radio/widgets/error_screen.dart';
+import 'package:flutter_online_radio/screens/error_screen.dart';
 
 import 'package:flutter_online_radio/widgets/list_card.dart';
 import 'package:flutter_online_radio/widgets/media_player_sheet.dart';
 import 'package:flutter_online_radio/widgets/radio_status.dart';
-import 'package:flutter_online_radio/widgets/waiting_screen.dart';
+import 'package:flutter_online_radio/screens/waiting_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

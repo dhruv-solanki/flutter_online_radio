@@ -1,11 +1,8 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_online_radio/bloc/radio_player_bloc.dart';
 import 'package:flutter_online_radio/controller/radio_player.dart';
-import 'package:flutter_online_radio/home_screen.dart';
-import 'package:flutter_online_radio/main.dart';
+import 'package:flutter_online_radio/screens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
